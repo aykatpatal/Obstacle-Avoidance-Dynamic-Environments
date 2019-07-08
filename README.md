@@ -8,4 +8,4 @@ Run main.m to see state lattice planners avoiding a dynamic obstacle.
 
 2.Dynamic obstacle avoidance by replanning
 
-[![Watch the video]()](https://youtu.be/zCdmPKRzU48)
+[![Watch the video](https://github.com/aykatpatal/Obstacle-Avoidance-Dynamic-Environments/blob/master/hqdefault_replan.jpg)](https://youtu.be/zCdmPKRzU48)
