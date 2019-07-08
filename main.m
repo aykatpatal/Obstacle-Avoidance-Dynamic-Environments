@@ -1,23 +1,56 @@
 %Define Boundary for the global plan
 Xminglobal=0;
-Xmaxglobal=100;
+Xmaxglobal=200;
 Yminglobal=0;
-Ymaxglobal=100;
+Ymaxglobal=200;
 statobs1=[20 30 10 20];
 rectangle('Position',statobs1,'FaceColor',[0 .5 .5]);
 hold on
-%axis([0 500 0 500])
+axis([0 200 0 200])
 
 
 statobs2=[50 10 10 20];
 rectangle('Position',statobs2,'FaceColor',[0 .5 .5]);
 hold on
-%axis([0 100 0 100])
-START_X=0;
-START_Y=0;
-GOAL_X=80;
-GOAL_Y=10;
+axis([0 200 0 200])
 
+statobs3=[70 40 10 20];
+rectangle('Position',statobs3,'FaceColor',[0 .5 .5]);
+hold on
+axis([0 200 0 200])
+
+statobs4=[60 80 10 10];
+rectangle('Position',statobs4,'FaceColor',[0 .5 .5]);
+hold on
+axis([0 200 0 200])
+
+statobs5=[160 180 10 20];
+rectangle('Position',statobs5,'FaceColor',[0 .5 .5]);
+hold on
+axis([0 200 0 200])
+
+statobs6=[100 130 10 20];
+rectangle('Position',statobs6,'FaceColor',[0 .5 .5]);
+hold on
+axis([0 200 0 200])
+
+statobs7=[100 70 10 10];
+rectangle('Position',statobs7,'FaceColor',[0 .5 .5]);
+hold on
+axis([0 200 0 200])
+
+statobs8=[140 120 10 10];
+rectangle('Position',statobs8,'FaceColor',[0 .5 .5]);
+hold on
+axis([0 200 0 200])
+START_X=10;
+START_Y=90;
+GOAL_X=180;
+GOAL_Y=30;
+k=plot(START_X,START_Y,'bx','MarkerSize',10);
+set(k,'XData',START_X,'YData',START_Y);
+u=plot(GOAL_X,GOAL_Y,'bx','MarkerSize',10);
+set(u,'XData',GOAL_X,'YData',GOAL_Y);
 grid_len=10;
 
 MAP_IDX=1;
@@ -61,9 +94,10 @@ OBS_COORD_LIST(OBS_IDX, 1)=statobs1(1);OBS_COORD_LIST(OBS_IDX, 2)=statobs1(2)+10
 OBS_IDX=OBS_IDX+1;
 OBS_COORD_LIST(OBS_IDX, 1)=statobs1(1);OBS_COORD_LIST(OBS_IDX, 2)=statobs1(2)+20;% 20,40
 OBS_IDX=OBS_IDX+1;
+%obstacle 2
 OBS_COORD_LIST(OBS_IDX, 1)=statobs2(1);OBS_COORD_LIST(OBS_IDX, 2)=statobs2(2);% 20,30
 OBS_IDX=OBS_IDX+1;
-OBS_COORD_LIST(OBS_IDX, 1)=statobs2(1)+statobs1(3);OBS_COORD_LIST(OBS_IDX, 2)=statobs2(2)+statobs2(4);% 30,50
+OBS_COORD_LIST(OBS_IDX, 1)=statobs2(1)+statobs2(3);OBS_COORD_LIST(OBS_IDX, 2)=statobs2(2)+statobs2(4);% 30,50
 OBS_IDX=OBS_IDX+1;
 OBS_COORD_LIST(OBS_IDX, 1)=statobs2(1)+10;OBS_COORD_LIST(OBS_IDX, 2)=statobs2(2);% 30,30
 OBS_IDX=OBS_IDX+1;
@@ -72,6 +106,84 @@ OBS_IDX=OBS_IDX+1;
 OBS_COORD_LIST(OBS_IDX, 1)=statobs2(1);OBS_COORD_LIST(OBS_IDX, 2)=statobs2(2)+10;% 20,40
 OBS_IDX=OBS_IDX+1;
 OBS_COORD_LIST(OBS_IDX, 1)=statobs2(1);OBS_COORD_LIST(OBS_IDX, 2)=statobs2(2)+20;% 20,40
+OBS_IDX=OBS_IDX+1;
+%obstacle 3
+OBS_COORD_LIST(OBS_IDX, 1)=statobs3(1);OBS_COORD_LIST(OBS_IDX, 2)=statobs3(2);% 20,30
+OBS_IDX=OBS_IDX+1;
+OBS_COORD_LIST(OBS_IDX, 1)=statobs3(1)+statobs3(3);OBS_COORD_LIST(OBS_IDX, 2)=statobs3(2)+statobs3(4);% 30,50
+OBS_IDX=OBS_IDX+1;
+OBS_COORD_LIST(OBS_IDX, 1)=statobs3(1)+10;OBS_COORD_LIST(OBS_IDX, 2)=statobs3(2);% 30,30
+OBS_IDX=OBS_IDX+1;
+OBS_COORD_LIST(OBS_IDX, 1)=statobs3(1)+10;OBS_COORD_LIST(OBS_IDX, 2)=statobs3(2)+10;% 30,40
+OBS_IDX=OBS_IDX+1;
+OBS_COORD_LIST(OBS_IDX, 1)=statobs3(1);OBS_COORD_LIST(OBS_IDX, 2)=statobs3(2)+10;% 20,40
+OBS_IDX=OBS_IDX+1;
+OBS_COORD_LIST(OBS_IDX, 1)=statobs3(1);OBS_COORD_LIST(OBS_IDX, 2)=statobs3(2)+20;% 20,40
+OBS_IDX=OBS_IDX+1;
+%obstacle 4
+OBS_COORD_LIST(OBS_IDX, 1)=statobs4(1);OBS_COORD_LIST(OBS_IDX, 2)=statobs4(2);% 20,30
+OBS_IDX=OBS_IDX+1;
+OBS_COORD_LIST(OBS_IDX, 1)=statobs4(1)+statobs4(3);OBS_COORD_LIST(OBS_IDX, 2)=statobs4(2)+statobs4(4);% 30,50
+OBS_IDX=OBS_IDX+1;
+OBS_COORD_LIST(OBS_IDX, 1)=statobs4(1)+10;OBS_COORD_LIST(OBS_IDX, 2)=statobs4(2);% 30,30
+OBS_IDX=OBS_IDX+1;
+OBS_COORD_LIST(OBS_IDX, 1)=statobs4(1)+10;OBS_COORD_LIST(OBS_IDX, 2)=statobs4(2)+10;% 30,40
+OBS_IDX=OBS_IDX+1;
+OBS_COORD_LIST(OBS_IDX, 1)=statobs4(1);OBS_COORD_LIST(OBS_IDX, 2)=statobs4(2)+10;% 20,40
+OBS_IDX=OBS_IDX+1;
+OBS_COORD_LIST(OBS_IDX, 1)=statobs4(1);OBS_COORD_LIST(OBS_IDX, 2)=statobs4(2)+10;% 20,40
+OBS_IDX=OBS_IDX+1;
+%obstacle 5
+OBS_COORD_LIST(OBS_IDX, 1)=statobs5(1);OBS_COORD_LIST(OBS_IDX, 2)=statobs5(2);% 20,30
+OBS_IDX=OBS_IDX+1;
+OBS_COORD_LIST(OBS_IDX, 1)=statobs5(1)+statobs5(3);OBS_COORD_LIST(OBS_IDX, 2)=statobs5(2)+statobs5(4);% 30,50
+OBS_IDX=OBS_IDX+1;
+OBS_COORD_LIST(OBS_IDX, 1)=statobs5(1)+10;OBS_COORD_LIST(OBS_IDX, 2)=statobs5(2);% 30,30
+OBS_IDX=OBS_IDX+1;
+OBS_COORD_LIST(OBS_IDX, 1)=statobs5(1)+10;OBS_COORD_LIST(OBS_IDX, 2)=statobs5(2)+10;% 30,40
+OBS_IDX=OBS_IDX+1;
+OBS_COORD_LIST(OBS_IDX, 1)=statobs5(1);OBS_COORD_LIST(OBS_IDX, 2)=statobs5(2)+10;% 20,40
+OBS_IDX=OBS_IDX+1;
+OBS_COORD_LIST(OBS_IDX, 1)=statobs5(1);OBS_COORD_LIST(OBS_IDX, 2)=statobs5(2)+20;% 20,40
+OBS_IDX=OBS_IDX+1;
+%obstacle 6
+OBS_COORD_LIST(OBS_IDX, 1)=statobs6(1);OBS_COORD_LIST(OBS_IDX, 2)=statobs6(2);% 20,30
+OBS_IDX=OBS_IDX+1;
+OBS_COORD_LIST(OBS_IDX, 1)=statobs6(1)+statobs6(3);OBS_COORD_LIST(OBS_IDX, 2)=statobs6(2)+statobs6(4);% 30,50
+OBS_IDX=OBS_IDX+1;
+OBS_COORD_LIST(OBS_IDX, 1)=statobs6(1)+10;OBS_COORD_LIST(OBS_IDX, 2)=statobs6(2);% 30,30
+OBS_IDX=OBS_IDX+1;
+OBS_COORD_LIST(OBS_IDX, 1)=statobs6(1)+10;OBS_COORD_LIST(OBS_IDX, 2)=statobs6(2)+10;% 30,40
+OBS_IDX=OBS_IDX+1;
+OBS_COORD_LIST(OBS_IDX, 1)=statobs6(1);OBS_COORD_LIST(OBS_IDX, 2)=statobs6(2)+10;% 20,40
+OBS_IDX=OBS_IDX+1;
+OBS_COORD_LIST(OBS_IDX, 1)=statobs6(1);OBS_COORD_LIST(OBS_IDX, 2)=statobs6(2)+20;% 20,40
+OBS_IDX=OBS_IDX+1;
+%obstacle 7
+OBS_COORD_LIST(OBS_IDX, 1)=statobs7(1);OBS_COORD_LIST(OBS_IDX, 2)=statobs7(2);% 20,30
+OBS_IDX=OBS_IDX+1;
+OBS_COORD_LIST(OBS_IDX, 1)=statobs7(1)+statobs7(3);OBS_COORD_LIST(OBS_IDX, 2)=statobs7(2)+statobs7(4);% 30,50
+OBS_IDX=OBS_IDX+1;
+OBS_COORD_LIST(OBS_IDX, 1)=statobs7(1)+10;OBS_COORD_LIST(OBS_IDX, 2)=statobs7(2);% 30,30
+OBS_IDX=OBS_IDX+1;
+OBS_COORD_LIST(OBS_IDX, 1)=statobs7(1)+10;OBS_COORD_LIST(OBS_IDX, 2)=statobs7(2)+10;% 30,40
+OBS_IDX=OBS_IDX+1;
+OBS_COORD_LIST(OBS_IDX, 1)=statobs7(1);OBS_COORD_LIST(OBS_IDX, 2)=statobs7(2)+10;% 20,40
+OBS_IDX=OBS_IDX+1;
+OBS_COORD_LIST(OBS_IDX, 1)=statobs7(1);OBS_COORD_LIST(OBS_IDX, 2)=statobs7(2)+10;% 20,40
+%obstacle 8
+OBS_COORD_LIST(OBS_IDX, 1)=statobs8(1);OBS_COORD_LIST(OBS_IDX, 2)=statobs8(2);% 20,30
+OBS_IDX=OBS_IDX+1;
+OBS_COORD_LIST(OBS_IDX, 1)=statobs8(1)+statobs8(3);OBS_COORD_LIST(OBS_IDX, 2)=statobs8(2)+statobs8(4);% 30,50
+OBS_IDX=OBS_IDX+1;
+OBS_COORD_LIST(OBS_IDX, 1)=statobs8(1)+10;OBS_COORD_LIST(OBS_IDX, 2)=statobs8(2);% 30,30
+OBS_IDX=OBS_IDX+1;
+OBS_COORD_LIST(OBS_IDX, 1)=statobs8(1)+10;OBS_COORD_LIST(OBS_IDX, 2)=statobs8(2)+10;% 30,40
+OBS_IDX=OBS_IDX+1;
+OBS_COORD_LIST(OBS_IDX, 1)=statobs8(1);OBS_COORD_LIST(OBS_IDX, 2)=statobs8(2)+10;% 20,40
+OBS_IDX=OBS_IDX+1;
+OBS_COORD_LIST(OBS_IDX, 1)=statobs8(1);OBS_COORD_LIST(OBS_IDX, 2)=statobs8(2)+10;% 20,40
+
 
 
 Optimal_path=a_star(OPEN, CLOSED, OPEN_IDX, CLOSED_IDX, OBS_COORD_LIST, OBS_IDX, MAP, MAP_IDX, START_X, START_Y, GOAL_X, GOAL_Y, Xminglobal, Xmaxglobal, Yminglobal, Ymaxglobal);
@@ -92,14 +204,14 @@ Optimal_path(1,4)=0;
 manu='x';
 
 %dynamic obs path
-obsx0=58;
-obsy0=90;
+obsx0=130;
+obsy0=120;
 obsvx0= 0;
-obsvy0=-50/30;
+obsvy0=-90/60;
 dt=0.1;
 DYN_IDX=1;
 
-for tobs=0:dt:60
+for tobs=0:dt:70
     obsx0=obsx0 + obsvx0*dt;
     obsy0=obsy0 + obsvy0*dt;
     %disp(obsy0);
@@ -156,8 +268,8 @@ collision_avoided=false;
 j=size(path,1);
 k=size(dyn_obs_path,1);
  %Plot the Optimal Path!
- p=plot(path(1,1),path(1,2),'bo');
- dy=plot(dyn_obs_path(1,1),dyn_obs_path(1,2),'bo');
+ p=plot(path(1,1),path(1,2),'bo','MarkerSize',10);
+ dy=plot(dyn_obs_path(1,1),dyn_obs_path(1,2),'mh','MarkerSize',10);
  %j=j+1;
  g=max(j,k);
  for i=1:1:g
@@ -165,8 +277,8 @@ k=size(dyn_obs_path,1);
   j=size(path,1);
   g=max(j,k);
   
-  if i<=j
-     
+  if (i<=j)
+     i
   set(p,'XData',path(i,1),'YData',path(i,2));
   plot(path(:,1),path(:,2));
   
@@ -288,7 +400,7 @@ k=size(dyn_obs_path,1);
      
      for replanning_IDX=1:size(replanned_path,1)-1
     
-            replanned_path(OPT_IDX,4)=t1;
+            replanned_path(replanning_IDX,4)=t1;
 
                 disp(replanning_IDX);
         disp('@@@@@@@@@@@@@@@@@@@@@@@@');
@@ -335,17 +447,17 @@ k=size(dyn_obs_path,1);
      
      
     end
-     
+     if path(i,4)>stop_time+time_to_stop
+      delete (pseudo_obs);
+  end
+ 
       
   end
   
   
-  if path(i,4)>stop_time+time_to_stop
-      delete (pseudo_obs);
-  end
- 
   
- axis([-50 150 -50 150])
+  
+ axis([0 200 0 200])
  delete(a);
  end
  
